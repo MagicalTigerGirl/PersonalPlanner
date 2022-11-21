@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/color_textinputlayout_border</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxBackgroundColor">@color/color_textinputlayout_background</item>
+        <item name="hintTextColor">@color/color_textinputlayout_border</item>
+        <item name="android:textCursorDrawable">@color/color_primary</item>
+    </style>
+    <style name="TextInputLayoutStyleVariantNoCorner" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/color_textinputlayout_border_variant</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxBackgroundColor">@color/color_textinputlayout_background_variant</item>
+        <item name="hintTextColor">@color/color_textinputlayout_border_variant</item>
+        <item name="android:textCursorDrawable">@color/color_primary</item>
+    </style>
+    <style name="TextInputLayoutStyleCreateUser" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/color_primary</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxBackgroundColor">#DFEAD2</item>
+        <item name="hintTextColor">@color/color_primary_variant</item>
+        <item name="android:textCursorDrawable">@color/color_primary</item>
+    </style>
+    <style name="TextInputLayoutStyleVariant" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/color_textinputlayout_border_variant</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxBackgroundColor">@color/color_textinputlayout_background_variant</item>
+        <item name="hintTextColor">@color/color_textinputlayout_border_variant</item>
+        <item name="android:textCursorDrawable">@color/color_primary</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxCornerRadiusBottomEnd">32dp</item>
+        <item name="boxCornerRadiusBottomStart">32dp</item>
+        <item name="boxCornerRadiusTopEnd">32dp</item>
+        <item name="boxCornerRadiusTopStart">32dp</item>
+        <item name="android:paddingLeft">20dp</item>
+    </style>
+</resources>

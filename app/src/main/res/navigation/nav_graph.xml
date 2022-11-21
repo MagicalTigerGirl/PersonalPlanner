@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SplashFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.personalplanner.ui.fragment.LoginFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_LoginFragment_to_signUpFragment"
+            app:destination="@id/SignUpFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_DashBoardFragment"
+            app:destination="@id/DashBoardFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_aboutUsFragment"
+            app:destination="@id/AboutUsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SplashFragment"
+        android:name="com.example.personalplanner.ui.fragment.SplashFragment"
+        android:label="Iniciando..."
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_SplashFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SignUpFragment"
+        android:name="com.example.personalplanner.ui.fragment.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/DashBoardFragment"
+        android:name="com.example.personalplanner.ui.fragment.DashBoardFragment"
+        android:label="Menu">
+        <action
+            android:id="@+id/action_DashBoardFragment_to_ToDoListFragment"
+            app:destination="@id/ToDoListFragment" />
+        <action
+            android:id="@+id/action_DashBoardFragment_to_ToDoListFragment2"
+            app:destination="@id/ToDoListFragment" />
+        <action
+            android:id="@+id/action_DashBoardFragment_to_CalendarFragment"
+            app:destination="@id/CalendarFragment" />
+        <action
+            android:id="@+id/action_DashBoardFragment_to_WhislistFragment"
+            app:destination="@id/WhislistFragment" />
+        <action
+            android:id="@+id/action_DashBoardFragment_to_ShoppingListFragment"
+            app:destination="@id/ShoppingListFragment" />
+        <action
+            android:id="@+id/action_DashBoardFragment_to_BillsFragment"
+            app:destination="@id/BillsFragment" />
+        <action
+            android:id="@+id/action_DashBoardFragment_to_FoodFragment"
+            app:destination="@id/FoodFragment" />
+        <action
+            android:id="@+id/action_DashBoardFragment_to_createUserFragment"
+            app:destination="@id/CreatePeopleFragment" />
+        <action
+            android:id="@+id/action_DashBoardFragment_to_EditPeopleFragment"
+            app:destination="@id/EditPeopleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ToDoListFragment"
+        android:name="com.example.personalplanner.ui.fragment.ToDoListFragment"
+        android:label="fragment_to_do_list"
+        tools:layout="@layout/fragment_to_do_list" />
+    <fragment
+        android:id="@+id/CalendarFragment"
+        android:name="com.example.personalplanner.ui.fragment.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/WhislistFragment"
+        android:name="com.example.personalplanner.ui.fragment.WhislistFragment"
+        android:label="fragment_whislist"
+        tools:layout="@layout/fragment_whislist" />
+    <fragment
+        android:id="@+id/ShoppingListFragment"
+        android:name="com.example.personalplanner.ui.fragment.ShoppingListFragment"
+        android:label="fragment_shopping_list"
+        tools:layout="@layout/fragment_shopping_list" />
+    <fragment
+        android:id="@+id/BillsFragment"
+        android:name="com.example.personalplanner.ui.fragment.BillsFragment"
+        android:label="fragment_bills"
+        tools:layout="@layout/fragment_bills" />
+    <fragment
+        android:id="@+id/FoodFragment"
+        android:name="com.example.personalplanner.ui.fragment.FoodFragment"
+        android:label="fragment_food"
+        tools:layout="@layout/fragment_food" >
+        <action
+            android:id="@+id/action_FoodFragment_to_createFoodFragment"
+            app:destination="@id/CreateFoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CreatePeopleFragment"
+        android:name="com.example.personalplanner.ui.fragment.CreatePeopleFragment"
+        android:label="CreatePeopleFragment" />
+    <fragment
+        android:id="@+id/AboutUsFragment"
+        android:name="com.example.personalplanner.ui.AboutUsFragment"
+        android:label="AboutUsFragment"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/CreateFoodFragment"
+        android:name="com.example.personalplanner.ui.fragment.CreateFoodFragment"
+        android:label="CreateFoodFragment" />
+    <fragment
+        android:id="@+id/EditPeopleFragment"
+        android:name="com.example.personalplanner.ui.fragment.EditPeopleFragment"
+        android:label="fragment_edit_person"
+        tools:layout="@layout/fragment_edit_people" />
+</navigation>

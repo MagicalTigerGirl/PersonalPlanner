@@ -1,0 +1,156 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.personalplanner.view_model.UserViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.LoginFragment"
+        android:background="@color/color_background">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glStartSettingInventory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guide_line" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glEndSettingInventory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/guide_line" />
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/circularImageView"
+            android:layout_width="@dimen/circular_image_view_size"
+            android:layout_height="@dimen/circular_image_view_size"
+            android:src="@drawable/logo"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/circular_image_view_width"
+            app:civ_shadow="true"
+            app:civ_shadow_color="@color/color_border_shadow"
+            app:civ_shadow_radius="@dimen/circular_image_view_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.014" />
+
+        <ImageView
+            android:id="@+id/imgUser"
+            android:layout_width="@dimen/image_user_size"
+            android:layout_height="@dimen/image_user_size"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/user"
+            app:layout_constraintBottom_toBottomOf="@+id/tilUserName"
+            app:layout_constraintEnd_toStartOf="@+id/tilUserName"
+            app:layout_constraintStart_toStartOf="@+id/glStartSettingInventory"
+            app:layout_constraintTop_toTopOf="@+id/tilUserName"
+            app:layout_constraintVertical_bias="0.323" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUserName"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/glEndSettingInventory"
+            app:layout_constraintStart_toEndOf="@+id/imgUser"
+            app:layout_constraintTop_toBottomOf="@+id/circularImageView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tilUserName"
+                colorAccent="@color/color_primary"
+                android:text="@={viewModel.name}"
+                android:textColorHighlight="@color/color_textinputlayout_highlight"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/imgPassword"
+            android:layout_width="@dimen/image_password_size"
+            android:layout_height="@dimen/image_password_size"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/password"
+            app:layout_constraintBottom_toBottomOf="@+id/tilPassword"
+            app:layout_constraintEnd_toStartOf="@+id/tilPassword"
+            app:layout_constraintStart_toStartOf="@+id/glStartSettingInventory"
+            app:layout_constraintTop_toTopOf="@+id/tilPassword"
+            app:layout_constraintVertical_bias="0.294" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/glEndSettingInventory"
+            app:layout_constraintStart_toEndOf="@+id/imgPassword"
+            app:layout_constraintTop_toBottomOf="@+id/tilUserName"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tilPassword"
+                android:text="@={viewModel.password}"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_login_height"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/gradient"
+            android:text="@string/btnLogin"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_login_text_size"
+            android:textStyle="bold|italic"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toStartOf="@+id/glEndSettingInventory"
+            app:layout_constraintStart_toStartOf="@+id/glStartSettingInventory"
+            app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
+        <!-- Validar las credenciales
+        android:onClick="@{() -> viewmodel.validateCredentials()}"
+        -->
+
+        <ImageButton
+            android:id="@+id/btnSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_signup_height"
+            android:background="@drawable/create_account"
+            android:backgroundTint="@null"
+            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

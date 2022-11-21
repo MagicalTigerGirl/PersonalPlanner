@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.personalplanner.view_model.UserViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.SignUpFragment"
+        android:background="#DAE3DA">
+
+        <ImageView
+            android:id="@+id/imgWaves"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/waveheaderanimated"
+            android:scaleType="fitStart" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="@dimen/text_view_register"
+            android:layout_height="wrap_content"
+            android:text="@string/tvRegister"
+            android:fontFamily="@font/ramadhan"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/text_view_register_margin_left"
+            android:layout_marginTop="@dimen/text_view_register_margin_top"
+            android:textSize="@dimen/text_view_register_text_size" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSignUpUserName"
+            app:startIconDrawable="@drawable/icon_user"
+            style="@style/TextInputLayoutStyleVariant"
+            android:layout_width="@dimen/text_input_layout_sign_up_user"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_input_layout_sign_up_user_name_margin_top"
+            android:layout_centerHorizontal="true"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                colorAccent="@color/color_textinputlayout_border_variant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tilUserName"
+                android:inputType="text"
+                android:text="@={viewmodel.name}"
+                android:textColorHighlight="@color/color_primary" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSignUpEmail"
+            app:startIconDrawable="@android:drawable/ic_dialog_email"
+            style="@style/TextInputLayoutStyleVariant"
+            android:layout_width="@dimen/text_input_layout_sign_up_user"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_input_layout_sign_up_user_email_margin_top"
+            android:layout_centerHorizontal="true"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                colorAccent="@color/color_textinputlayout_border_variant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tilEmail"
+                android:inputType="text"
+                android:text="@={viewmodel.email}"
+                android:textColorHighlight="@color/color_primary" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSignUpPassword"
+            app:startIconDrawable="@android:drawable/ic_secure"
+            style="@style/TextInputLayoutStyleVariant"
+            android:layout_width="@dimen/text_input_layout_sign_up_user"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_input_layout_sign_up_user_password_margin_top"
+            android:layout_centerHorizontal="true"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                colorAccent="@color/color_textinputlayout_border_variant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tilPassword"
+                android:inputType="text"
+                android:text="@={viewmodel.password}"
+                android:textColorHighlight="@color/color_primary" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSignUpConfirmPassword"
+            app:startIconDrawable="@android:drawable/ic_secure"
+            style="@style/TextInputLayoutStyleVariant"
+            android:layout_width="@dimen/text_input_layout_sign_up_user"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_input_layout_sign_up_user_confirm_password_margin_top"
+            android:layout_centerHorizontal="true"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                colorAccent="@color/color_textinputlayout_border_variant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tilConfirmPassword"
+                android:inputType="text"
+                android:text="@={viewmodel.confirmPassword}"
+                android:textColorHighlight="@color/color_primary" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvCreateUser"
+            android:layout_width="@dimen/text_view_create_user_width"
+            android:layout_height="wrap_content"
+            android:text="Crear"
+            android:fontFamily="@font/ramadhan"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/text_view_create_user_margin_left"
+            android:layout_marginTop="@dimen/text_view_create_user_margin_top"
+            android:textSize="@dimen/text_view_create_user_text_size" />
+
+        <ImageButton
+            android:id="@+id/imgbtnCreateUser"
+            android:layout_width="@dimen/image_button_create_user_width"
+            android:layout_height="@dimen/image_button_create_user_height"
+            android:layout_alignTop="@+id/tvCreateUser"
+            android:layout_alignBottom="@+id/tvCreateUser"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/tvCreateUser"
+            android:layout_marginEnd="@dimen/image_button_create_user_margin_end"
+            android:background="@drawable/gradient_button"
+            android:src="@android:drawable/arrow_down_float"
+            android:onClick="@{() -> viewmodel.validateCredentials()}"
+            />
+
+    </RelativeLayout>
+</layout>
